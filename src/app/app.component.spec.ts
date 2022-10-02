@@ -1,12 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import {AuthModule, OidcSecurityService} from 'angular-auth-oidc-client';
+import { CheckSessionService} from 'angular-auth-oidc-client/lib/iframe/check-session.service';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        AuthModule.forRoot
+      ],
       declarations: [
         AppComponent
       ],
+      providers: [
+        OidcSecurityService,
+        CheckSessionService
+      ]
     }).compileComponents();
   });
 

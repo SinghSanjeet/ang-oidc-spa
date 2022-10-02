@@ -68,6 +68,12 @@
             },
             "development": {
               "browserTarget": "ang-oidc-spa:build:development"
+            },
+            "options": {
+              "port": 3000,
+              "browserTarget": "ang-oidc-spa:build",
+              "proxyConfig": "src/proxy.conf.json",
+              "ssl": true
             }
           },
           "defaultConfiguration": "development"
